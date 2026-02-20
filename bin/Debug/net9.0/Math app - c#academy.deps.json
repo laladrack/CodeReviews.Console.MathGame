@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "Math app - c#academy/1.0.0": {
+        "runtime": {
+          "Math app - c#academy.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Math app - c#academy/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
