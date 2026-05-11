@@ -1,140 +1,130 @@
-﻿
-bool jogar = false;
-int modo = 0;
+﻿System.Console.WriteLine("Welcome to the Math Game!");
+List<Dictionary<string, string>> past_games = new List<Dictionary<string, string>>();
 
-Console.WriteLine("----------------");
-Console.WriteLine("-- Math Quiz --");
-Console.WriteLine("Select an option:");
-Console.WriteLine("1) Add");
-Console.WriteLine("2) Subtract");
-Console.WriteLine("3) Multiply");
-Console.WriteLine("4) Divide");
-Console.WriteLine("----------------");
+bool question_play_bool = false;
+bool playerAnswerBool;
 
-while (!jogar)
-{
-    modo = Convert.ToInt32(Console.ReadLine());
+while (!question_play_bool){
+    System.Console.WriteLine("------- OPTIONS -------");
+    System.Console.WriteLine("1) Play................");
+    System.Console.WriteLine("2) Previous games......");
+    System.Console.WriteLine("3) Exit................");
+    System.Console.WriteLine("-----------------------");
+    playerAnswerBool = int.TryParse(Console.ReadLine().Trim(), out int playerAnswer);
+    while (!playerAnswerBool) continue;
 
-    if (modo > 1 || modo < 5)
+    System.Console.WriteLine("-----------------------");
+    switch(playerAnswer)
     {
-        jogar = true;
-    }
-}
-
-int vitorias = 0;
-int[] pergunta;
-int resposta;
-
-for (int i = 0; i < 6; i++) { 
-    switch (modo)
-    {
-        case 1:
-            pergunta = Add();
-            Console.WriteLine($"{pergunta[0]} + {pergunta[1]} = ?");
-            resposta = Convert.ToInt32(Console.ReadLine());
-
-            if (resposta == pergunta[2])
-            {
-                vitorias++;
-                Console.WriteLine("Correct!");
-            }
-            else { Console.WriteLine("Wrong..."); }
-            
+        case 1: 
+            past_games.Add(jogar());
             break;
         case 2:
-            pergunta = Subtract();
-            Console.WriteLine($"{pergunta[0]} - {pergunta[1]} = ?");
-            resposta = Convert.ToInt32(Console.ReadLine());
-
-            if (resposta == pergunta[2])
-            {
-                vitorias++;
-                Console.WriteLine("Correct!");
+            if (past_games.Count > 0){
+                System.Console.WriteLine("Question: Your answer");
+                foreach (var game in past_games)
+                {
+                    System.Console.WriteLine($"Game {past_games.IndexOf(game)}");
+                    foreach (var question in game)
+                    {
+                        System.Console.WriteLine($"{question.Key}: {question.Value}");
+                    }
+                }
             }
-            else { Console.WriteLine("Wrong..."); }
-
+            else
+            {
+                System.Console.WriteLine("No games registered! Play a game first.");
+            }
             break;
         case 3:
-            pergunta = Multiply();
-            Console.WriteLine($"{pergunta[0]} * {pergunta[1]} = ?");
-            resposta = Convert.ToInt32(Console.ReadLine());
-
-            if (resposta == pergunta[2])
-            {
-                vitorias++;
-                Console.WriteLine("Correct!");
-            }
-            else { Console.WriteLine("Wrong..."); }
-
-            break;
-        case 4:
-            pergunta = Divide();
-            Console.WriteLine($"{pergunta[0]} / {pergunta[1]} = ?");
-            resposta = Convert.ToInt32(Console.ReadLine());
-
-            if (resposta == pergunta[2])
-            {
-                vitorias++;
-                Console.WriteLine("Correct!");
-            }
-            else { Console.WriteLine("Wrong..."); }
-
-            break;
-        default:
-            Console.WriteLine("Not a valid input!");
+            System.Console.WriteLine("See you next time!");
+            Environment.Exit(0);
             break;
     }
+    System.Console.WriteLine("-----------------------");
 }
 
-Console.WriteLine("------------------------");
-Console.WriteLine($"Your score: {vitorias}");
-Console.WriteLine("Thank you for playing!");
-Console.WriteLine("------------------------");
-
-int[] Add()
+Dictionary<string, string> jogar()
 {
-    Random random = new Random();
-    int n1 = random.Next(101);
-    int n2 = random.Next(101);
+    int correct_answers = 0;
+    Random rand = new Random();
+    Dictionary<string, string> jogo = new Dictionary<string, string>();
 
-    return [n1, n2, n1 + n2];
-}
-
-int[] Subtract()
-{
-    Random random = new Random();
-    int n1 = random.Next(101);
-    int n2 = random.Next(101);
-
-    return [n1, n2, n1 - n2];
-}
-
-int[] Multiply()
-{
-    Random random = new Random();
-    int n1 = random.Next(101);
-    int n2 = random.Next(101);
-
-    return [n1,n2,n1 * n2];
-}
-
-int[] Divide()
-{
-    Random random = new Random();
-
-    int n1 = 0;
-    int n2 = 0;
-    bool divisivel = false;
-
-    while (!divisivel)
+    for (int i = 1; i < 6; i++)
     {
-        n1 = random.Next(101);
-        n2 = random.Next(1,101);
+        int num1;
+        int num2;
+        int correct_answer; 
+        string operador;
+        string respostaString;
 
-        if (n1 % n2 == 0) 
+        int numOperador = rand.Next(1,4);
+        switch(numOperador)
         {
-            divisivel = true;
+            case 1: // adição
+                operador = "+";
+                num1 = rand.Next(100);
+                num2 = rand.Next(100);
+                correct_answer = num1 + num2;
+                break;
+            case 2: // subtração
+                operador = "-";
+                num1 = rand.Next(100);
+                num2 = rand.Next(100);
+                correct_answer = num1 - num2;
+                break;
+            case 3: // multiplicação
+                operador = "*";
+                num1 = rand.Next(100);
+                num2 = rand.Next(100);
+                correct_answer = num1 * num2;
+                break;
+            case 4: // divisão
+                operador = "/";
+                num1 = rand.Next(100);
+                num2 = rand.Next(1,100);
+                while (num1 % num2 != 0) num2 = rand.Next(1,100);
+                correct_answer = num1 / num2;
+                break;
+            default:
+                operador = "";
+                num1 = 0;
+                num2 = 0;
+                correct_answer = 0;
+                break; 
         }
+
+        string question = $"{num1} {operador} {num2}";
+        System.Console.WriteLine("----------------------");
+        System.Console.WriteLine($"Question {i}: {question} = ?");
+        respostaString = Console.ReadLine().Trim();
+        bool respostaBool = int.TryParse(respostaString, out int resposta);
+        while (!respostaBool)
+        {
+            System.Console.WriteLine("Only integers are accepted.");
+            System.Console.WriteLine($"Question {i}: {question} = ?");
+            respostaString = Console.ReadLine().Trim();
+            respostaBool = int.TryParse(respostaString, out resposta);
+        }
+
+        if (resposta == correct_answer) {
+            correct_answers++;
+            System.Console.WriteLine("Correct!");
+        }
+        else
+        {
+            System.Console.WriteLine($"Incorrect. The answer was {correct_answer}");
+        }
+
+        jogo.Add(question, respostaString);
+        
     }
-    return [n1, n2, n1 / n2];
+    jogo.Add("Points", $"{correct_answers}");
+    System.Console.WriteLine("----------------------");
+    System.Console.WriteLine($"Correct answers: {correct_answers}.");
+    if (correct_answers > 3) System.Console.WriteLine("Pretty good!");
+    if (correct_answers <= 3) System.Console.WriteLine("Needs some work.");
+    System.Console.WriteLine("----------------------");
+
+    return jogo;
 }
