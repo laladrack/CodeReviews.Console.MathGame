@@ -17,7 +17,7 @@ while (!question_play_bool){
     switch(playerAnswer)
     {
         case 1: 
-            past_games.Add(jogar());
+            past_games.Add(Jogar());
             break;
         case 2:
             if (past_games.Count > 0){
@@ -44,7 +44,7 @@ while (!question_play_bool){
     System.Console.WriteLine("-----------------------");
 }
 
-Dictionary<string, string> jogar()
+Dictionary<string, string> Jogar()
 {
     int correct_answers = 0;
     Random rand = new Random();
