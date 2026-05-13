@@ -41,7 +41,6 @@ while (!question_play_bool){
             Environment.Exit(0);
             break;
     }
-    System.Console.WriteLine("-----------------------");
 }
 
 Dictionary<string, string> Jogar()
@@ -49,6 +48,27 @@ Dictionary<string, string> Jogar()
     int correct_answers = 0;
     Random rand = new Random();
     Dictionary<string, string> jogo = new Dictionary<string, string>();
+    bool play_bool = false;
+    int numOperador = 0;
+
+    while (!play_bool)
+    {
+        Console.WriteLine("-- Select game mode: --");
+        Console.WriteLine("1) Addition............");
+        Console.WriteLine("2) Subtraction.........");
+        Console.WriteLine("3) Multiplication......");
+        Console.WriteLine("4) Division............");
+        Console.WriteLine("-----------------------");
+
+        string userMode = Console.ReadLine();
+        if (int.TryParse(userMode, out numOperador))
+        {
+            if (numOperador < 5 && numOperador > 0)
+            {
+                play_bool = true;
+            }
+        }
+    }
 
     for (int i = 1; i < 6; i++)
     {
@@ -58,7 +78,6 @@ Dictionary<string, string> Jogar()
         string operador;
         string respostaString;
 
-        int numOperador = rand.Next(1,4);
         switch(numOperador)
         {
             case 1: // adição
@@ -117,8 +136,8 @@ Dictionary<string, string> Jogar()
         }
 
         jogo.Add(question, respostaString);
-        
     }
+
     jogo.Add("Points", $"{correct_answers}");
     System.Console.WriteLine("----------------------");
     System.Console.WriteLine($"Correct answers: {correct_answers}.");

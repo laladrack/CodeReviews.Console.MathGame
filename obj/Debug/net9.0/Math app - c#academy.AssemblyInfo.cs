@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Math app - c#academy")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e50d9182619891b1d833b5e232fae4db24f57e19")]
 [assembly: System.Reflection.AssemblyProductAttribute("Math app - c#academy")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Math app - c#academy")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

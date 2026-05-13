@@ -12,3 +12,18 @@ C:\Users\majua\source\repos\Math app - c#academy\Math app - c#academy\obj\Debug\
 C:\Users\majua\source\repos\Math app - c#academy\Math app - c#academy\obj\Debug\net9.0\Math app - c#academy.pdb
 C:\Users\majua\source\repos\Math app - c#academy\Math app - c#academy\obj\Debug\net9.0\Math app - c#academy.genruntimeconfig.cache
 C:\Users\majua\source\repos\Math app - c#academy\Math app - c#academy\obj\Debug\net9.0\ref\Math app - c#academy.dll
+C:\Users\majua\Documents\CSHARP\mathGame\CodeReviews.Console.MathGame\obj\Debug\net9.0\Math app - c#academy.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\majua\Documents\CSHARP\mathGame\CodeReviews.Console.MathGame\obj\Debug\net9.0\Math app - c#academy.AssemblyInfoInputs.cache
+C:\Users\majua\Documents\CSHARP\mathGame\CodeReviews.Console.MathGame\obj\Debug\net9.0\Math app - c#academy.AssemblyInfo.cs
+C:\Users\majua\Documents\CSHARP\mathGame\CodeReviews.Console.MathGame\obj\Debug\net9.0\Math app - c#academy.csproj.CoreCompileInputs.cache
+C:\Users\majua\Documents\CSHARP\mathGame\CodeReviews.Console.MathGame\obj\Debug\net9.0\Math app - c#academy.sourcelink.json
+C:\Users\majua\Documents\CSHARP\mathGame\CodeReviews.Console.MathGame\obj\Debug\net9.0\Math app - c#academy.dll
+C:\Users\majua\Documents\CSHARP\mathGame\CodeReviews.Console.MathGame\obj\Debug\net9.0\refint\Math app - c#academy.dll
+C:\Users\majua\Documents\CSHARP\mathGame\CodeReviews.Console.MathGame\obj\Debug\net9.0\Math app - c#academy.pdb
+C:\Users\majua\Documents\CSHARP\mathGame\CodeReviews.Console.MathGame\bin\Debug\net9.0\Math app - c#academy.exe
+C:\Users\majua\Documents\CSHARP\mathGame\CodeReviews.Console.MathGame\bin\Debug\net9.0\Math app - c#academy.deps.json
+C:\Users\majua\Documents\CSHARP\mathGame\CodeReviews.Console.MathGame\bin\Debug\net9.0\Math app - c#academy.runtimeconfig.json
+C:\Users\majua\Documents\CSHARP\mathGame\CodeReviews.Console.MathGame\bin\Debug\net9.0\Math app - c#academy.dll
+C:\Users\majua\Documents\CSHARP\mathGame\CodeReviews.Console.MathGame\bin\Debug\net9.0\Math app - c#academy.pdb
+C:\Users\majua\Documents\CSHARP\mathGame\CodeReviews.Console.MathGame\obj\Debug\net9.0\Math app - c#academy.genruntimeconfig.cache
+C:\Users\majua\Documents\CSHARP\mathGame\CodeReviews.Console.MathGame\obj\Debug\net9.0\ref\Math app - c#academy.dll
